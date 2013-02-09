@@ -3,7 +3,7 @@
 <body>
 <form name = "input" action="Cliente.html" method="POST">
 <?php
-$id=$_POST["id"];
+$id=$_GET["id"];
 $id = 2;
 $con = mysql_connect("192.168.126.1", "root", "juli");
 mysql_select_db("tecnicas", $con);
