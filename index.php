@@ -10,7 +10,7 @@ $connect= mysql_connect ($host, $usuario, $clave);
 mysql_select_db ( $bd, $connect );   
   
 // definimos la consulta  
-$query =    "SELECT * FROM tbl_clients ORDER BY nombre"; 
+$query =    "SELECT * FROM tbl_clients ORDER BY client";
 // hacemos la consulta  
 $clientsQuery = mysql_query ($query, $connect) or die (mysql_error());
 $clients = array();
@@ -42,8 +42,8 @@ while($client = mysql_fetch_array($clientsQuery)){
 			echo "<td>".$client["adress"]."</td>";
 			echo "<td>".$client["observations"]."</td>";
 			echo "<td>".$client["sex"]."</td>";
-			echo "<td><a href='ver-cliente.php?id='".$client["id"].">Ver</a></td>";
-			echo "<td><a href='borrar-cliente.php?id='".$client["id"].">Eliminar</a></td>";
+			echo "<td><a href='ver-cliente.php?id=".$client["id"]."'>Ver</a></td>";
+			echo "<td><a href='borrar-cliente.php?id=".$client["id"]."'>Eliminar</a></td>";
 		echo "</tr>";
 	}
 ?>
