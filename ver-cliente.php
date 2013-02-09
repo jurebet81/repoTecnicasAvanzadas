@@ -1,7 +1,7 @@
 <html>
 <head><title>DatosCliente</title></head>
 <body>
-<form name = "input" action="clientes.php" method="POST">
+<form name = "input" action="actualizar.php" method="POST">
 <?php
 $id=$_GET["id"];
 //$id = 2;
