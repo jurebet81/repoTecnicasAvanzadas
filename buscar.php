@@ -14,7 +14,7 @@ mysql_select_db("tecnicasavanzadas", $con);
 $query="SELECT * FROM tbl_clients WHERE MATCH (client,phone,adress,observations) AGAINST('" . $search . "*' IN BOOLEAN MODE)";
 $results = mysql_query($query);
 
-if($results!=0){
+if(mysql_num_rows($results)!=0){
 
 	echo "<table border='2'>
 
