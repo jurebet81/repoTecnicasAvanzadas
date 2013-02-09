@@ -10,7 +10,7 @@ $connect= mysql_connect ($host, $usuario, $clave);
 mysql_select_db ( $bd, $connect );   
   
 // definimos la consulta  
-$query =    "SELECT * FROM tbl_clients ORDER BY nombre"; 
+$query =    "SELECT * FROM tbl_clients ORDER BY client";
 // hacemos la consulta  
 $clientsQuery = mysql_query ($query, $connect) or die (mysql_error());
 $clients = array();
