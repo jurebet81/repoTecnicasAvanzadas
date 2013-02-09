@@ -20,7 +20,7 @@ while($client = mysql_fetch_array($clientsQuery)){
 ?>
 
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <body>
 
 <h1>CONSULTA</h1>
@@ -49,6 +49,6 @@ while($client = mysql_fetch_array($clientsQuery)){
 ?>
 </table>
 
-
+<hd><a href='index.html'>Volver</a></hd>
 </body>
 </html>
