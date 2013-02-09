@@ -41,6 +41,7 @@
 	 <input type="submit" value="Guardar"><br>
 	</form>
 	<?php } ?>
+	<hd><a href='index.php'>Ver Cliente</a>";VOLVER</hd>
 </body>
  
 </html>// seleccionamos la base 
