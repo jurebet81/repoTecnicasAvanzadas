@@ -18,7 +18,11 @@ echo "El Registro ha sido eliminado satisfactoriamente";
 <html>
 <body>
 
+<<<<<<< HEAD
 <form action="index.php" >
+=======
+<form action="consulta.php" >
+>>>>>>> 09a10bfcf295a6f54564b26e5296aa8079a1f671
 
 <input type="submit" value="volver">
 </form>

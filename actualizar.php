@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <html>
 <head><title>DatosCliente</title></head>
 <body>
@@ -29,6 +30,8 @@ Femenino<input type="radio" name = "sex" value ="female" ></p>
 </body>
 </html>
 =======
+=======
+>>>>>>> 09a10bfcf295a6f54564b26e5296aa8079a1f671
 <?php
 
 $connect = mysql_connect("10.2.1.178", "tecnicas", "tecnicas");
@@ -61,5 +64,9 @@ Sexo:</br>
 
 
 </body>
+<<<<<<< HEAD
 </html>
 >>>>>>> 4b3a20d26bd886af3bee8a3caf3975e4c730594e
+=======
+</html>
+>>>>>>> 09a10bfcf295a6f54564b26e5296aa8079a1f671
