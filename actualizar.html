@@ -1,12 +1,18 @@
 <html>
-<head>DatosCliente</head>
+<head><title>DatosCliente</title></head>
 <body>
 <form name = "input" action="Cliente.html" method="POST">
-<p>Nombre:</p>
-<p>Telefono:</p>
-<p>Direccion:</p>
-<p>Observaciones:</p>
-<p>Sexo:</p>
+<?php>
+$id=$_POST["id"];
+
+?>
+
+<p>Nombre:<input type= "text" name = "nombre"> </p>
+<p>Telefono:<input type= "text" name = "phone"> </p>
+<p>Direccion: <input type= "text" name = "address"> </p>
+<p>Observaciones: <input type = "textarea" name "obs"></p>
+<p>Sexo:<input type = "radio" name= "sex" value = "male"></p>
+<p><input type="radio" name = "sex" value ="female" >
 <input type = "submit" value = "Actualizar Datos">
 </form>
 </body>
