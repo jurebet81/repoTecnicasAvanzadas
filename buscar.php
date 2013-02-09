@@ -11,7 +11,7 @@ die("No se pudo conectar a la base de datos". mysql_error());
 
 }
 mysql_select_db("tecnicasavanzadas", $con);
-$query="SELECT * FROM tbl_clients WHERE MATCH (client,phone,adress,observations) AGAINST('" . $search . "*' IN BOOLEAN MODE)";
+$query="SELECT * FROM tbl_clients WHERE MATCH (client,phone,adress,observations) AGAINST('*" . $search . "*' IN BOOLEAN MODE)";
 $results = mysql_query($query);
 
 if(mysql_num_rows($results)!=0){
@@ -38,7 +38,8 @@ if(mysql_num_rows($results)!=0){
 
 	echo "</table>";
 }else{
-echo "<h4>No se han encontrado coincidencias</h4>";
+echo "<h4>No se han encontrado coincidencias</h4>
+<td><a href='index.html'>Volver</a>";
 }
 
 mysql_close($con);
