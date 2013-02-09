@@ -27,7 +27,7 @@
 			
 		// hacemos la consultay
 		mysql_query ($sql, $connect) or die (mysql_error());
-		echo "El usuario ".htmlentities($_POST["client"])." ha sido guardado exitosamente";
+		echo "El usuario ".htmlentities($_POST["name"])." ha sido guardado exitosamente";
 	}else{
 	
 	?>
