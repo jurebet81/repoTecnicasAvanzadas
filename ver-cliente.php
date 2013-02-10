@@ -19,6 +19,7 @@ mysql_close($con);
 ?>
 
 <input type = "submit" value = "Editar informacion">
+<p><a href='index.html'>Salir</a></p>
 </form>
 </body>
 </html>
