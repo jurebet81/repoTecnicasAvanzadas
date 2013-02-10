@@ -1,5 +1,5 @@
 <?php
-$connect = mysql_connect("10.2.1.178", "tecnicas", "tecnicas");
+$connect = mysql_connect("localhost", "tecnicas", "tecnicas");
 mysql_select_db("tecnicasavanzadas", $connect) or die("algo anda nmal");
 $id = $_GET["id"];
 $query = 'delete from tbl_clients where id = '.$id;
@@ -18,11 +18,9 @@ echo "El Registro ha sido eliminado satisfactoriamente";
 <html>
 <body>
 
-<<<<<<< HEAD
-<form action="index.php" >
-=======
+
 <form action="consulta.php" >
->>>>>>> 09a10bfcf295a6f54564b26e5296aa8079a1f671
+
 
 <input type="submit" value="volver">
 </form>

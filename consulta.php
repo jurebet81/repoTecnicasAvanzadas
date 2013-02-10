@@ -1,7 +1,7 @@
 <?php
 
 //conexion BD
-$host = "10.2.1.178";   
+$host = "localhost";   
 $usuario = "tecnicas";   
 $clave = "tecnicas";  
 $bd = "tecnicasavanzadas";  
@@ -21,6 +21,19 @@ while($client = mysql_fetch_array($clientsQuery)){
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
+<head>
+<script language="JavaScript">
+function aviso(url){
+if (!confirm("ALERTA!! va a proceder a eliminar este registro, si desea eliminarlo de click en ACEPTAR\n de lo contrario de click en CANCELAR.")) {
+	return false;
+}
+else {
+document.location = url;
+return true;
+	}
+}
+</script>
+</head>
 <body>
 
 <h1>CONSULTA</h1>
@@ -43,7 +56,7 @@ while($client = mysql_fetch_array($clientsQuery)){
 			echo "<td>".$client["observations"]."</td>";
 			echo "<td>".$client["sex"]."</td>";
 			echo "<td><a href='ver-cliente.php?id=".$client["id"]."'>Ver</a></td>";
-			echo "<td><a href='borrar-cliente.php?id=".$client["id"]."'>Eliminar</a></td>";
+			echo "<td>" ?> <a href="javascript:;" onclick="aviso('borrar-cliente.php?id=<?php echo $client["id"];?>'); return false;">Eliminar</a><?php "</td>";
 		echo "</tr>";
 	}
 ?>
