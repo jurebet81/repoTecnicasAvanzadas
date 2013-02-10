@@ -6,9 +6,36 @@
  <p>Nombre: <input type="text" name="name" /></p>
  <p>Telefono: <input type="text" name="telephone" /></p>
  <p>Direccion: <input type="text" name="address" /></p>
- <p>Observaciones: <textarea></textarea></p>
+ <p>Observaciones: <textarea name="obs"></textarea></p>
  <input type="radio" name="sex" value="M"> M
  <input type="radio" name="sex" value="F"> F<br>
- <button type="button">Guardar</button>
+ <input type="submit" value="Guardar"><br>
 </form>
+
+<?php 
+// linea con redireccion luego de ejecutar la consulta
+//header ("location: formulario-php-mysql.php#fcomentario");
+
+$name=$_POS["name"];
+$telephone=$_POST["telephone"];
+$address=$_POST["address"];
+$obs=$_POST["obs"];
+$sex=$_POST["sex"];
+//conectamos a la base
+$host = "10.2.1.178";   
+$usuario = "tecnicas";   
+$clave = "tecnicas";  
+$bd = "tecnicasavanzadas";  
+$connect=mysql_connect ($host, $usuario, $clave);  
+// seleccionamos la base 
+mysql_select_db ( $bd, $connect );  
+
+// definimos la consulta
+$sql = "INSERT INTO clients (client,phone,adress,observations,sex) ";
+$sql.= "VALUES ('".$name."', '".$telephone."', '".$address."','".$observations."','".$sex."')";
+	
+// hacemos la consulta
+mysql_query ($sql, $connect) or die (mysql_error());
+?>
+ 
 </html>

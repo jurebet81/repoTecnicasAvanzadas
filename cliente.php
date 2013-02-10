@@ -44,15 +44,4 @@
 	<hd><a href='index.php'>Ver Cliente</a>";VOLVER</hd>
 </body>
  
-</html>// seleccionamos la base 
-mysql_select_db ( $bd, $connect );  
-
-// definimos la consulta
-$sql = "INSERT INTO clients (client,phone,adress,observations,sex) ";
-$sql.= "VALUES ('".$name."', '".$telephone."', '".$address."','".$observations."','".$sex."')";
-	
-// hacemos la consulta
-mysql_query ($sql, $connect) or die (mysql_error());
-?>
- 
 </html>
