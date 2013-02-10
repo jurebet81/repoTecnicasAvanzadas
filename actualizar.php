@@ -1,5 +1,5 @@
 <html>
-<head><title>Actializar</title></head>
+<head><title>Actualizar</title></head>
 <body>
 <?php
 	$connect = mysql_connect("localhost", "tecnicas", "tecnicas");
@@ -18,6 +18,7 @@
 	mysql_query($query);	
 	mysql_close($connect);
 	echo "Datos actualizados correctamente";
+	
 	echo "<p><a href='index.html'>Salir</a></p>";
 	
 } else {
