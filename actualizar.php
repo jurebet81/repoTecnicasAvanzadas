@@ -1,72 +1,51 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 <html>
-<head><title>DatosCliente</title></head>
+<head><title>Actializar</title></head>
 <body>
-<form name = "input" action="actualizar.php" method="POST">
 <?php
-//$id=$_GET["id"];
-//$id = 2;
-$con = mysql_connect("10.2.1.178", "tecnicas", "tecnicas");
-//$con = mysql_connect("localhost", "root", "juli");
-mysql_select_db("tecnicasavanzadas", $con);
-$result = mysql_query("SELECT * FROM tbl_clients where id = 7");
-while ($row = mysql_fetch_array($result)){
+	$connect = mysql_connect("localhost", "tecnicas", "tecnicas");
+	mysql_select_db("tecnicasavanzadas", $connect) or die ("Imposible la conexion");
+	
+	if(isset($_POST['name'])){ 
+	 		
+	$name = $_POST["name"];	
+	$phone = $_POST["phone"];
+	$adress = $_POST["address"];
+	$obs = $_POST["obs"];
+	$sex = $_POST["sex"];
+	$query = "UPDATE tbl_clients SET client = '". $name . "', phone = '". $phone;
+	$query = $query .  "', adress = '". $adress ."', observations = '". $obs;
+	$query = $query . "', sex = '". $sex . "' WHERE id = ". $_GET["id"];
+	mysql_query($query);	
+	mysql_close($connect);
+	echo "Datos actualizados correctamente";
+	echo "<p><a href='index.html'>Salir</a></p>";
+	
+} else {
+	
+	$id = $_GET["id"];
+	$query = "select * from tbl_clients where id = ".$id;
+	$result = mysql_query($query);
+	$client = mysql_fetch_array($result);	
+	$name = $client["client"];	
+	$phone = $client["phone"];
+	$adress = $client["adress"];
+	$obs = $client["observations"];
+	$sex = $client["sex"];
+	mysql_close($connect);
 
-	echo $row['client'];
-
-}
-mysql_close($con);
+	echo "<form action= actualizar.php?id=" . $_GET["id"] . "> method='POST'>";
+	echo "<input type = 'hidden' name = 'id' value = '" . $_GET["id"] . "'>";
+	echo "<p>Nombre:<input type= 'text' name = 'name' value ='" . $name . "'></p>";
+	echo "<p>Telefono:<input type= 'text' name = 'phone' value ='" . $phone . "'></p>";
+	echo "<p>Direccion:<input type= 'text' name = 'address' value ='" . $adress . "'></p>";
+	echo "<p>Observaciones:<input type= 'text' name = 'obs' value ='" . $obs . "'> </p>";
+	echo "<p>Sexo: M <input type= 'radio' name = 'sex' value = 'M' " if ($sex == 'M'){echo 'checked'; } ">"; 
+	echo "F <input type= 'radio' name = 'sex' value = 'F' " if ($sex == 'F') { echo 'checked'; } "> </p>";
+	echo "<input type = 'submit' value = 'Actualizar'>";	
+	echo "</form>";
+}	
 ?>
-
-<p>Nombre:<input type= "text" name = "nombre"> </p>
-<p>Telefono:<input type= "text" name = "phone"> </p>
-<p>Direccion: <input type= "text" name = "address"> </p>
-<p>Observaciones: <input type = "textarea" name "obs"></p>
-<p>Sexo: Masculino<input type = "radio" name= "sex" value = "male">
-Femenino<input type="radio" name = "sex" value ="female" ></p>
-<input type = "submit" value = "Actualizar Datos">
+	
 </form>
 </body>
 </html>
-=======
-=======
->>>>>>> 09a10bfcf295a6f54564b26e5296aa8079a1f671
-<?php
-
-$connect = mysql_connect("10.2.1.178", "tecnicas", "tecnicas");
-mysql_select_db("tecnicasavanzadas", $connect) or die("algo anda nmal");
-$id = $_get["id"]
-$query = 'select * from tbl_clients where id = '.$id.'';
-$result = mysql_query($query);
-$cliente = mysql_fetch_array($result);
-//echo "<td>" . $row['client'] . "</td>";
-//while ($row = mysql_fetch_array($result)){
-//echo $row['client'];
-?>
-<html>
-<body>
-
-<form action="construction.php" method="post">
-Nombre: <?php echo $cliente['client'] ?></br>
-</br>
-Tel&eacute;fono: <?php echo $cliente['phone'] ?> </br>
-</br>
-Direcci&oacute;n: <?php echo $cliente['adress'] ?></br>
-</br>
-Observaciones:<?php echo $cliente['observations'] ?></br>
-</br>
-Sexo:</br>
-</br>
-<input type="submit" value="Actualizar">
-</form>
-
-
-
-</body>
-<<<<<<< HEAD
-</html>
->>>>>>> 4b3a20d26bd886af3bee8a3caf3975e4c730594e
-=======
-</html>
->>>>>>> 09a10bfcf295a6f54564b26e5296aa8079a1f671
