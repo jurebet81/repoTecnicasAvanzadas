@@ -28,6 +28,7 @@
 		// hacemos la consultay
 		mysql_query ($sql, $connect) or die (mysql_error());
 		echo "El usuario ".htmlentities($_POST["name"])." ha sido guardado exitosamente";
+		echo "<p><a href = 'index.html'>Salir</a></p>"
 	}else{
 	
 	?>
@@ -40,8 +41,8 @@
 	 <input type="radio" name="sex" value="F"> F<br>
 	 <input type="submit" value="Guardar"><br>
 	</form>
-	<?php } ?>
-	<hd><a href='index.php'>Ver Cliente</a>";VOLVER</hd>
+	<?php } ?> 
+	
 </body>
  
 </html>
