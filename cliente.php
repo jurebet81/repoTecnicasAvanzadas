@@ -28,7 +28,7 @@
 		// hacemos la consultay
 		mysql_query ($sql, $connect) or die (mysql_error());
 		echo "El usuario ".htmlentities($_POST["name"])." ha sido guardado exitosamente";
-		echo "<p><a href = 'index.html'>Salir</a></p>"
+		echo "<p><a href = 'index.html'>Salir</a></p>";
 	}else{
 	
 	?>
